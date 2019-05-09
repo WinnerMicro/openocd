@@ -1075,7 +1075,8 @@ static int cmsis_dap_init(void)
 	/* Ask CMSIS-DAP to automatically retry on receiving WAIT for
 	 * up to 64 times. This must be changed to 0 if sticky
 	 * overrun detection is enabled. */
-	retval = cmsis_dap_cmd_DAP_TFER_Configure(0, 64, 0);
+	//retval = cmsis_dap_cmd_DAP_TFER_Configure(0, 64, 0);
+	retval = cmsis_dap_cmd_DAP_TFER_Configure(0, 4096, 0);
 	if (retval != ERROR_OK)
 		return ERROR_FAIL;
 
